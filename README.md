@@ -1,31 +1,56 @@
-Sistema de Préstamo de Libros Distribuido
-El objetivo de este proyecto es desarrollar un sistema de préstamo de libros distribuido que funcione en múltiples sedes de la Biblioteca Caribe. El sistema cuenta con los siguientes componentes:
+# Sistema de Préstamo de Libros Distribuido
+El objetivo de este proyecto es desarrollar un sistema de préstamo de libros distribuido para la Biblioteca Caribe. El sistema funcionará en al menos dos sedes de la biblioteca, y cada sede contará con una base de datos replicada.
 
-Gestor de Carga
-Este componente se encarga de recibir las peticiones de los procesos solicitantes y coordinar las acciones correspondientes.
+## Componentes del sistema
+### Gestor de Carga
+El gestor de carga recibe las peticiones de los procesos solicitantes y realiza las acciones correspondientes.
 
-Consulta el README del Gestor de Carga para obtener instrucciones detalladas sobre cómo ejecutarlo.
-Procesos Solicitantes (PS)
-Estos procesos son responsables de ingresar las operaciones sobre los libros que requieren los usuarios.
+#### Instrucciones de ejecución: 
+Consulta el archivo README del Gestor de Carga para obtener información detallada sobre cómo ejecutarlo.
 
-Puedes configurar los procesos solicitantes para que generen automáticamente las solicitudes a partir de un archivo de texto preconfigurado o utilicen un generador de carga como JMETER.
-Cada proceso solicitante tiene su propio README con instrucciones para ejecutarlo correctamente.
-Actores
-Los actores son los encargados de interactuar con la base de datos y sus réplicas.
+### Procesos Solicitantes (PS)
+Los procesos solicitantes ingresan las operaciones sobre los libros solicitados por los usuarios.
 
-Actores para Devoluciones y Renovaciones: Hay al menos dos actores que se comunican con el gestor utilizando el patrón Publicador/Suscriptor para gestionar las devoluciones y renovaciones de libros.
-Actor para Solicitudes de Préstamo: Existe un actor destinado a atender las solicitudes de préstamos.
-Cada actor tiene su propio README con instrucciones para ejecutarlo correctamente.
-Base de datos MongoDB
-La base de datos utilizada en este sistema es MongoDB. Debes asegurarte de tener una instancia de MongoDB configurada y accesible para el correcto funcionamiento del sistema.
+#### Operaciones disponibles:
 
-Consulta la sección correspondiente en el README del componente específico para obtener más información sobre la configuración de la base de datos.
-Replicación de la base de datos
-Para la replicación de la base de datos, deberás realizar la configuración manualmente.
+1. Devolver un libro: permite a un usuario devolver un libro específico.
+2. Renovar un libro: permite a un usuario renovar un libro que ya posee por una semana adicional.
+3. Solicitar préstamo de un libro: permite solicitar el préstamo de un libro específico.
+#### Configuración:
+Puedes configurar los procesos solicitantes para generar automáticamente las solicitudes a partir de un archivo de texto preconfigurado o utilizar un generador de carga como JMETER.
 
-Continuidad del servicio
-En caso de que un gestor de una sede se caiga, las peticiones serán reenviadas automáticamente al otro gestor disponible para garantizar la continuidad del servicio.
+#### Instrucciones de ejecución:
+Consulta el archivo README del Proceso Solicitante para obtener información detallada sobre cómo ejecutarlo.
 
-Asegúrate de revisar los README de cada componente para obtener instrucciones detalladas sobre cómo ejecutarlos y configurar el entorno necesario.
+### Actores
+Los actores interactúan con la base de datos y sus réplicas.
 
-¡Gracias por utilizar nuestro sistema de préstamo de libros distribuido! Esperamos que sea de utilidad para tu proyecto en la Biblioteca Caribe.
+##### Actores para Devoluciones y Renovaciones: 
+Existen al menos dos actores que utilizan el patrón Publicador/Suscriptor para gestionar las devoluciones y renovaciones de libros.
+
+#### Actor para Solicitudes de Préstamo: 
+Existe un actor dedicado a atender las solicitudes de préstamo.
+
+#### Instrucciones de ejecución: 
+Consulta el archivo README de cada Actor para obtener información detallada sobre cómo ejecutarlos.
+
+### Base de datos MongoDB
+El sistema utiliza MongoDB como base de datos para almacenar la información.
+
+#### Configuración de la base de datos: 
+Asegúrate de tener una instancia de MongoDB configurada y accesible para el correcto funcionamiento del sistema.
+
+#### Instrucciones de configuración: 
+Consulta la sección correspondiente en el archivo README del componente específico para obtener información detallada sobre cómo configurar la base de datos.
+
+#### Replicación de la base de datos
+La replicación de la base de datos debe configurarse manualmente para garantizar la consistencia entre las sedes.
+
+#### Continuidad del servicio
+En caso de que un gestor de una sede se caiga, las peticiones se reenviarán automáticamente al otro gestor disponible para asegurar la continuidad del servicio.
+
+Asegúrate de revisar los archivos README de cada componente para obtener instrucciones detalladas sobre cómo ejecutarlos y configurar el entorno necesario.
+
+Gracias por utilizar nuestro sistema de préstamo de libros distribuido. Esperamos que sea de utilidad para tu proyecto en la Biblioteca Caribe.
+
+###### MÁS INFORMACIÓN EN EL PDF PRINCIPAL
