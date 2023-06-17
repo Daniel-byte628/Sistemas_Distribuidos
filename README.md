@@ -1,2 +1,10 @@
 # Sistemas_Distribuidos
-El proyecto consiste en el desarrollo de un sistema de préstamo de libros en múltiples sedes de la Biblioteca Caribe.
+El proyecto consiste en el desarrollo de un sistema de préstamo de libros en múltiples sedes de la Biblioteca Caribe. Cada sede contará con una base de datos replicada. El sistema incluye los siguientes componentes:
+
+Procesos Solicitantes (PS): Son los procesos encargados de ingresar las operaciones sobre los libros solicitadas por los usuarios, que incluyen devolver un libro, renovar un libro y solicitar un libro prestado. Estos procesos pueden generar automáticamente las solicitudes a partir de un archivo de texto preconfigurado o mediante el uso de un generador de carga como JMETER.
+
+Gestor de Carga: Este proceso recibe las peticiones de los PS y realiza las acciones correspondientes según el tipo de solicitud. Para la devolución de un libro, el gestor acepta la operación de inmediato y publica un requerimiento de registro de operación que será atendido por uno de los procesos Actores. En el caso de renovación de un libro, el gestor acepta la operación y publica un tópico con los datos del libro para que un proceso Actor realice la actualización correspondiente en la base de datos. Para solicitar un libro prestado, el PS realiza la solicitud al gestor y espera una respuesta. El gestor asigna la tarea a un proceso Actor encargado de validar la disponibilidad del libro en la base de datos local y su réplica.
+
+Actores: Son los procesos encargados de interactuar con la base de datos y sus réplicas. Existen al menos dos actores que se comunican con el gestor bajo el patrón Publicador/Suscriptor para atender devoluciones y renovaciones, y al menos un tercer actor encargado de gestionar las solicitudes de préstamos. Los actores actualizan la base de datos local y envían solicitudes de actualización a la réplica para mantener la consistencia. Además, los actores encargados de otorgar préstamos verifican la existencia del libro en la base de datos local y remota antes de aprobar la solicitud.
+
+El objetivo del proyecto es implementar este sistema de préstamo de libros distribuido en las sedes de la Biblioteca Caribe, garantizando la consistencia de los datos y brindando una experiencia fluida para los usuarios.
