@@ -1,0 +1,17 @@
+import co.edu.javeriana.test.ProcesoSolicitanteTest;
+
+ProcesoSolicitanteTest a = new ProcesoSolicitanteTest();
+
+// Obtener los valores de los parámetros desde JMeter Variables
+String ipGestor1 = vars.get("ipGestor1");
+String ipGestor2 = vars.get("ipGestor2");
+String puertoGCS = vars.get("puertoGCS");
+int puertoGC = Integer.parseInt(puertoGCS);
+String pathArchivosRequerimientos = vars.get("pathArchivosRequerimientos");
+
+// Obtiene el número de hilo correspondiente al orden de ejecución
+int numeroHilo = ${__threadNum};
+// Guarda el número de hilo en una variable local
+int numeroHiloLocal = numeroHilo;
+// Llamar al método miMetodo() pasándole los valores de los parámetros
+a.iniciar(numeroHiloLocal, ipGestor1, ipGestor2, puertoGC, pathArchivosRequerimientos);

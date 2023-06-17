@@ -1,0 +1,13 @@
+
+// Definir los parámetros
+String ipGestor1 = "localhost";
+String ipGestor2 = "localhost";
+String pathArchivosRequerimientos = "C:/Users/Santiago/Documents/UNIVERSIDAD/Biblioteca Distribuida/Test";
+String puertoGCS = "5555";
+
+
+// Guardar los parámetros en JMeter Variables
+vars.put("ipGestor1", ipGestor1);
+vars.put("ipGestor2", ipGestor2);
+vars.put("puertoGCS", puertoGCS);
+vars.put("pathArchivosRequerimientos", pathArchivosRequerimientos);

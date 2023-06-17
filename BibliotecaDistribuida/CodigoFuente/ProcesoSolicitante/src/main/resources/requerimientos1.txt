@@ -1,0 +1,83 @@
+Sede 2
+[
+    {
+        "ISBN": "6724499087647",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "1509714262703",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "9516111502382",
+        "requerimiento": "PRESTAMO"
+    },
+    {
+        "ISBN": "1742419994200",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "4948756052455",
+        "requerimiento": "PRESTAMO"
+    },
+    {
+        "ISBN": "2806000747846",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "9615422234021",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "9098799206477",
+        "requerimiento": "PRESTAMO"
+    },
+    {
+        "ISBN": "3612414841311",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "9246054182000",
+        "requerimiento": "PRESTAMO"
+    },
+    {
+        "ISBN": "9021746881922",
+        "requerimiento": "PRESTAMO"
+    },
+    {
+        "ISBN": "1022113284658",
+        "requerimiento": "PRESTAMO"
+    },
+    {
+        "ISBN": "4054366279151",
+        "requerimiento": "PRESTAMO"
+    },
+    {
+        "ISBN": "4436547501329",
+        "requerimiento": "PRESTAMO"
+    },
+    {
+        "ISBN": "1697512880613",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "3425182610383",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "3065203394299",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "3305428607979",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "8747409334292",
+        "requerimiento": "RENOVACION"
+    },
+    {
+        "ISBN": "5585840490060",
+        "requerimiento": "PRESTAMO"
+    }
+]
