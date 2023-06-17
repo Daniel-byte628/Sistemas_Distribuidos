@@ -1,10 +1,31 @@
-# Sistemas_Distribuidos
-El proyecto consiste en el desarrollo de un sistema de préstamo de libros en múltiples sedes de la Biblioteca Caribe. Cada sede contará con una base de datos replicada. El sistema incluye los siguientes componentes:
+Sistema de Préstamo de Libros Distribuido
+El objetivo de este proyecto es desarrollar un sistema de préstamo de libros distribuido que funcione en múltiples sedes de la Biblioteca Caribe. El sistema cuenta con los siguientes componentes:
 
-Procesos Solicitantes (PS): Son los procesos encargados de ingresar las operaciones sobre los libros solicitadas por los usuarios, que incluyen devolver un libro, renovar un libro y solicitar un libro prestado. Estos procesos pueden generar automáticamente las solicitudes a partir de un archivo de texto preconfigurado o mediante el uso de un generador de carga como JMETER.
+Gestor de Carga
+Este componente se encarga de recibir las peticiones de los procesos solicitantes y coordinar las acciones correspondientes.
 
-Gestor de Carga: Este proceso recibe las peticiones de los PS y realiza las acciones correspondientes según el tipo de solicitud. Para la devolución de un libro, el gestor acepta la operación de inmediato y publica un requerimiento de registro de operación que será atendido por uno de los procesos Actores. En el caso de renovación de un libro, el gestor acepta la operación y publica un tópico con los datos del libro para que un proceso Actor realice la actualización correspondiente en la base de datos. Para solicitar un libro prestado, el PS realiza la solicitud al gestor y espera una respuesta. El gestor asigna la tarea a un proceso Actor encargado de validar la disponibilidad del libro en la base de datos local y su réplica.
+Consulta el README del Gestor de Carga para obtener instrucciones detalladas sobre cómo ejecutarlo.
+Procesos Solicitantes (PS)
+Estos procesos son responsables de ingresar las operaciones sobre los libros que requieren los usuarios.
 
-Actores: Son los procesos encargados de interactuar con la base de datos y sus réplicas. Existen al menos dos actores que se comunican con el gestor bajo el patrón Publicador/Suscriptor para atender devoluciones y renovaciones, y al menos un tercer actor encargado de gestionar las solicitudes de préstamos. Los actores actualizan la base de datos local y envían solicitudes de actualización a la réplica para mantener la consistencia. Además, los actores encargados de otorgar préstamos verifican la existencia del libro en la base de datos local y remota antes de aprobar la solicitud.
+Puedes configurar los procesos solicitantes para que generen automáticamente las solicitudes a partir de un archivo de texto preconfigurado o utilicen un generador de carga como JMETER.
+Cada proceso solicitante tiene su propio README con instrucciones para ejecutarlo correctamente.
+Actores
+Los actores son los encargados de interactuar con la base de datos y sus réplicas.
 
-El objetivo del proyecto es implementar este sistema de préstamo de libros distribuido en las sedes de la Biblioteca Caribe, garantizando la consistencia de los datos y brindando una experiencia fluida para los usuarios.
+Actores para Devoluciones y Renovaciones: Hay al menos dos actores que se comunican con el gestor utilizando el patrón Publicador/Suscriptor para gestionar las devoluciones y renovaciones de libros.
+Actor para Solicitudes de Préstamo: Existe un actor destinado a atender las solicitudes de préstamos.
+Cada actor tiene su propio README con instrucciones para ejecutarlo correctamente.
+Base de datos MongoDB
+La base de datos utilizada en este sistema es MongoDB. Debes asegurarte de tener una instancia de MongoDB configurada y accesible para el correcto funcionamiento del sistema.
+
+Consulta la sección correspondiente en el README del componente específico para obtener más información sobre la configuración de la base de datos.
+Replicación de la base de datos
+Para la replicación de la base de datos, deberás realizar la configuración manualmente.
+
+Continuidad del servicio
+En caso de que un gestor de una sede se caiga, las peticiones serán reenviadas automáticamente al otro gestor disponible para garantizar la continuidad del servicio.
+
+Asegúrate de revisar los README de cada componente para obtener instrucciones detalladas sobre cómo ejecutarlos y configurar el entorno necesario.
+
+¡Gracias por utilizar nuestro sistema de préstamo de libros distribuido! Esperamos que sea de utilidad para tu proyecto en la Biblioteca Caribe.
